@@ -1,9 +1,6 @@
-FROM suzukishunsuke/ruby:0.1.0
+FROM suzukishunsuke/ruby:0.1.1
 RUN apk update && \
   apk upgrade && \
   pip install --upgrade pip supervisor && \
-  ln -s /etc/supervisor/supervisord.conf /etc/supervisord.conf && \
-  mkdir -p /etc/supervisor/conf.d /var/log/supervisor && \
   rm -rf /var/cache/apk/*
-COPY supervisord.conf /etc/supervisor
-CMD /usr/bin/supervisord
+VOLUME /etc/supervisor /var/log/supervisor
