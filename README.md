@@ -9,6 +9,17 @@ tag | OS | ruby
 [0.1.0](https://github.com/suzuki-shunsuke/ruby.docker/blob/0.1.0/Dockerfile) | alpine 3.3 | 2.3.0
 [0.1.1](https://github.com/suzuki-shunsuke/ruby.docker/blob/0.1.1/Dockerfile) |  | 
 [0.1.2](https://github.com/suzuki-shunsuke/ruby.docker/blob/0.1.2/Dockerfile) |  | 
+[0.2.0](https://github.com/suzuki-shunsuke/ruby.docker/blob/0.2.0/Dockerfile) |  | 
+
+### 0.2.0
+
+* monit 5.15
+
+Data Volumes
+
+* /var/log
+* /etc/monit
+
 ### 0.1.2
 
 Add the data volumes.

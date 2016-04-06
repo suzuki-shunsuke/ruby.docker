@@ -1,6 +1,11 @@
-FROM suzukishunsuke/ruby:0.1.1
+FROM ruby:2.3.0-alpine
 RUN apk update && \
   apk upgrade && \
-  pip install --upgrade pip supervisor && \
+  apk add monit && \
+  mkdir -p /etc/monit/monit.d && \
+  mv /etc/monitrc /etc/monit && \
+  ln -s /etc/monit/monitrc /etc/monitrc && \
+  ln -s /etc/monit/monit.d /etc/monit.d && \
   rm -rf /var/cache/apk/*
-VOLUME /etc/supervisor /var/log/supervisor
+VOLUME /etc/monit /var/log
+CMD monit -I
